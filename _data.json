@@ -1,0 +1,107 @@
+{
+ "keyword": "aave",
+ "h1": "Aave",
+ "brand": "Aave",
+ "niche": "swap",
+ "verb": "Swap",
+ "title": "Aave - Open App",
+ "meta_description": "Aave app access for token swaps, collateral swaps, supply, borrow, and position management. Verify app.aave.com before connecting.",
+ "palette": {
+  "mode": "dark",
+  "bg": "#211D1D",
+  "accent": "#9896FF",
+  "ink": "#E6E6E6"
+ },
+ "hero_h2": "Swap collateral and manage DeFi positions",
+ "hero_lead": "Aave lets users access a non-custodial liquidity protocol for supplying, borrowing, and swap-enabled position management across supported onchain markets.",
+ "badge": "DeFi Swap",
+ "widget": {
+  "from": "ETH",
+  "from_net": "Ethereum",
+  "to": "USDC",
+  "to_net": "Ethereum",
+  "action": "Open Aave App"
+ },
+ "trust": [
+  "Non-custodial liquidity protocol",
+  "Swap features documented",
+  "Open-source smart contracts"
+ ],
+ "what_is": "Aave is a decentralised non-custodial liquidity protocol where suppliers provide liquidity and borrowers access liquidity by providing collateral, as described in the <a href='https://aave.com/docs'>Aave documentation</a>. The official interface also exposes swap tools for tokens and position management where supported.",
+ "how": [
+  {
+   "t": "Open the app",
+   "d": "Use app.aave.com and confirm the domain before connecting a wallet."
+  },
+  {
+   "t": "Choose a market",
+   "d": "Select the network and market shown by the interface; available assets and swap flows vary by market."
+  },
+  {
+   "t": "Pick a swap action",
+   "d": "Use token swap, collateral swap, repay with collateral, debt swap, or withdraw and swap when available."
+  },
+  {
+   "t": "Review and sign",
+   "d": "Check route provider, minimum received, approvals, health factor effects, and network costs before signing."
+  }
+ ],
+ "points": [
+  {
+   "h": "Position-aware swaps",
+   "p": "Move between assets, collateral, debt, or exit flows without treating each transaction as an isolated trade."
+  },
+  {
+   "h": "Documented providers",
+   "p": "The <a href='https://aave.com/docs/aave-v3/smart-contracts/swap-features'>swap features</a> page describes ParaSwap or CoW Protocol routing depending on network availability."
+  },
+  {
+   "h": "Onchain context",
+   "p": "It sits in the broader <a href='https://ethereum.org/defi/'>DeFi</a> stack, where wallet approvals, market parameters, and network costs should be checked before signing."
+  }
+ ],
+ "eeat": [
+  {
+   "text": "Aave documentation",
+   "url": "https://aave.com/docs"
+  },
+  {
+   "text": "Aave swap features",
+   "url": "https://aave.com/docs/aave-v3/smart-contracts/swap-features"
+  },
+  {
+   "text": "Ethereum DeFi",
+   "url": "https://ethereum.org/defi/"
+  }
+ ],
+ "faq": [
+  {
+   "q": "What is Aave?",
+   "a": "Aave is a non-custodial liquidity protocol for supplying crypto assets and borrowing against collateral; the app also includes swap-related position tools where supported.",
+   "open": true
+  },
+  {
+   "q": "Can I swap on Aave?",
+   "a": "Yes. The <a href='https://aave.com/docs/aave-v3/smart-contracts/swap-features'>Aave swap documentation</a> describes token swaps plus collateral, debt, and withdraw-and-swap flows, with providers depending on network availability.",
+   "open": false
+  },
+  {
+   "q": "Is this the official Aave app?",
+   "a": "No. This landing page points to <a href='https://app.aave.com/'>app.aave.com</a>, the Aave V3 app linked from aave.com; verify the domain before connecting.",
+   "open": false
+  },
+  {
+   "q": "Which networks does Aave support?",
+   "a": "Supported markets are selected inside the app and can change through governance; check the market selector and documented addresses before signing.",
+   "open": false
+  },
+  {
+   "q": "Is Aave risk free?",
+   "a": "No. Smart contract, oracle, collateral, network, liquidation, and market risks may apply; review the <a href='https://aave.com/docs/resources/risks'>risk documentation</a> and use your own judgment.",
+   "open": false
+  }
+ ],
+ "official_url": "https://app.aave.com/",
+ "official_domain": "app.aave.com",
+ "footer_note": "This page is not the official Aave app; verify app.aave.com before connecting a wallet; educational only, not financial advice."
+}
