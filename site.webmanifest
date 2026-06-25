@@ -1,22 +1,17 @@
 {
- "name": "Aave",
- "short_name": "Aave",
- "start_url": "/",
- "display": "standalone",
- "background_color": "#FFFFFF",
- "theme_color": "#FFFFFF",
- "icons": [
-  {
-   "src": "static/icon-192.png",
-   "sizes": "192x192",
-   "type": "image/png",
-   "purpose": "any maskable"
-  },
-  {
-   "src": "static/icon-512.png",
-   "sizes": "512x512",
-   "type": "image/png",
-   "purpose": "any maskable"
-  }
- ]
+  "name": "Aave V3",
+  "short_name": "Aave V3",
+  "description": "Aave V3 lets you supply and borrow crypto from your own wallet on the Aave V3 protocol.",
+  "start_url": "https://aave-v3-app.github.io/",
+  "scope": "https://aave-v3-app.github.io/",
+  "display": "standalone",
+  "background_color": "#F7F5F7",
+  "theme_color": "#B6509E",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
 }

